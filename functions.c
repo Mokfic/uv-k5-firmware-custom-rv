@@ -239,6 +239,12 @@ void FUNCTION_Select(FUNCTION_Type_t Function)
 		UI_DisplayStatus();
 	}
 
+
+	if ( bWasPowerSave && FUNCTION_IsRx() ) {
+    	gMissedCalls++;
+		UI_DisplayStatus();
+	}
+
 	switch (Function) {
 		case FUNCTION_FOREGROUND:
 			FUNCTION_Foreground(PreviousFunction);
@@ -249,6 +255,7 @@ void FUNCTION_Select(FUNCTION_Type_t Function)
 			return;
 
 		case FUNCTION_TRANSMIT:
+			gMissedCalls=0;
 			FUNCTION_Transmit();
 			break;
 

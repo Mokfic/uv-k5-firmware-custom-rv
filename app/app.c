@@ -1026,8 +1026,7 @@ static void CheckKeys(void)
 		boot_counter_10ms = 0;   // cancel boot screen/beeps if any key pressed
 
 	if (gKeyReading0 != Key) // new key pressed
-	{
-
+	{		
 		if (gKeyReading0 != KEY_INVALID && Key != KEY_INVALID)
 			ProcessKey(gKeyReading1, false, gKeyBeingHeld);  // key pressed without releasing previous key
 
@@ -1089,7 +1088,7 @@ void APP_TimeSlice10ms(void)
 {
 	gNextTimeslice = false;
 	gFlashLightBlinkCounter++;
-
+	gFlashLightNotifCounter++;
 #ifdef ENABLE_BOOT_BEEPS
 	if (boot_counter_10ms > 0 && (boot_counter_10ms % 25) == 0) {
 		AUDIO_PlayBeep(BEEP_880HZ_40MS_OPTIONAL);
@@ -1517,6 +1516,11 @@ static void ProcessKey(KEY_Code_t Key, bool bKeyPressed, bool bKeyHeld)
 		BACKLIGHT_TurnOn();
 		gBeepToPlay = BEEP_NONE;
 		return;
+	}
+
+	if (Key == KEY_F)
+	{
+		gMissedCalls = 0;
 	}
 
 	if (gCurrentFunction == FUNCTION_POWER_SAVE)

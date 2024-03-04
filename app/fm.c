@@ -48,7 +48,6 @@ bool              gFM_AutoScan;
 uint16_t          gFM_RestoreCountdown_10ms;
 
 
-
 const uint8_t BUTTON_STATE_PRESSED = 1 << 0;
 const uint8_t BUTTON_STATE_HELD = 1 << 1;
 

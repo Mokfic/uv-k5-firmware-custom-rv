@@ -14,7 +14,8 @@ enum FlashlightMode_t {
 
 extern enum FlashlightMode_t gFlashLightState;
 extern volatile uint16_t     gFlashLightBlinkCounter;
-
+extern volatile uint8_t 	 gFlashLightNotifCounter;
+extern uint8_t 				 gMissedCalls;
 void FlashlightTimeSlice(void);
 void ACTION_FlashLight(void);
 

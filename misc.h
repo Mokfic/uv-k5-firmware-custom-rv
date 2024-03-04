@@ -175,6 +175,7 @@ extern uint16_t              gEEPROM_RSSI_CALIB[7][4];
 extern uint16_t              gEEPROM_1F8A;
 extern uint16_t              gEEPROM_1F8C;
 
+extern uint8_t 				gMissedCalls;
 typedef union {
     struct {
         uint8_t
@@ -278,6 +279,7 @@ extern bool                  g_CxCSS_TAIL_Found;
 extern bool                  g_SquelchLost;
 
 extern volatile uint16_t     gFlashLightBlinkCounter;
+extern volatile uint8_t 	 gFlashLightNotifCounter;
 
 extern bool                  gFlagEndTransmission;
 extern uint8_t               gNextMrChannel;

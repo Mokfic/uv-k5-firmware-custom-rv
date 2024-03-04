@@ -159,6 +159,7 @@ bool     		  gCssBackgroundScan;
 
 volatile bool     gScheduleScanListen = true;
 volatile uint16_t gScanPauseDelayIn_10ms;
+uint8_t           gMissedCalls;
 
 #if defined(ENABLE_ALARM) || defined(ENABLE_TX1750)
 	AlarmState_t  gAlarmState;
@@ -197,6 +198,7 @@ bool              g_CxCSS_TAIL_Found;
 bool              g_SquelchLost;
 
 volatile uint16_t gFlashLightBlinkCounter;
+volatile uint8_t  gFlashLightNotifCounter;
 
 bool              gFlagEndTransmission;
 uint8_t           gNextMrChannel;

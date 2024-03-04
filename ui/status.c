@@ -129,6 +129,10 @@ void UI_DisplayStatus()
 	x += sizeof(BITMAP_VOX) + 1;
 #endif
 
+	if (gMissedCalls > 0) { // Missed call indicator
+		memcpy(line + x, BITMAP_MISSED, sizeof(BITMAP_MISSED));
+		x1 = x + sizeof(BITMAP_MISSED);
+	}
 	x = MAX(x1, 61u);
 
 	// KEY-LOCK indicator

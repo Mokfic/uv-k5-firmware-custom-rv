@@ -14,6 +14,16 @@ void FlashlightTimeSlice()
 		return;
 	}
 
+
+	if (gMissedCalls >0) {
+
+		if (gFlashLightNotifCounter  >= 10  &&  gFlashLightNotifCounter <15)
+			GPIO_SetBit(&GPIOC->DATA, GPIOC_PIN_FLASHLIGHT);
+		else if (gFlashLightNotifCounter  > 15)
+			GPIO_ClearBit(&GPIOC->DATA, GPIOC_PIN_FLASHLIGHT);		
+		return;
+	}
+
 	if (gFlashLightState == FLASHLIGHT_SOS) {
 		const uint16_t u = 15;
 		static uint8_t c;
