@@ -279,7 +279,6 @@ extern bool                  g_CxCSS_TAIL_Found;
 extern bool                  g_SquelchLost;
 
 extern volatile uint16_t     gFlashLightBlinkCounter;
-extern volatile uint8_t 	 gFlashLightNotifCounter;
 
 extern bool                  gFlagEndTransmission;
 extern uint8_t               gNextMrChannel;

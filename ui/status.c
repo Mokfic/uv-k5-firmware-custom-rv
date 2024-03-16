@@ -131,6 +131,7 @@ void UI_DisplayStatus()
 
 	if (gMissedCalls > 0) { // Missed call indicator
 		memcpy(line + x, BITMAP_MISSED, sizeof(BITMAP_MISSED));
+		memcpy(line + x, &gMissedCalls, 1);
 		x1 = x + sizeof(BITMAP_MISSED);
 	}
 	x = MAX(x1, 61u);

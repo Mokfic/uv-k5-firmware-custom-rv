@@ -42,6 +42,7 @@
 
 FUNCTION_Type_t gCurrentFunction;
 
+
 bool FUNCTION_IsRx()
 {
 	return gCurrentFunction == FUNCTION_MONITOR ||
@@ -241,7 +242,9 @@ void FUNCTION_Select(FUNCTION_Type_t Function)
 
 
 	if ( bWasPowerSave && FUNCTION_IsRx() ) {
-    	gMissedCalls++;
+    			
+		gMissedCalls |= 0b00001100 << (gEeprom.RX_VFO*3);
+				
 		UI_DisplayStatus();
 	}
 

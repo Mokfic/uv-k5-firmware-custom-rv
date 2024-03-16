@@ -398,7 +398,8 @@ void UI_DisplayMain(void)
 
 			// highlight the selected/used VFO with a marker
 			if (isMainVFO)
-				memcpy(p_line0 + 0, BITMAP_VFO_Default, sizeof(BITMAP_VFO_Default));
+				memcpy(p_line0 + 0, BITMAP_VFO_Default, sizeof(BITMAP_VFO_Default));	
+				
 		}
 		else // active TX VFO
 		{	// highlight the selected/used VFO with a marker
